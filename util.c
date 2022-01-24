@@ -1850,6 +1850,7 @@ out:
 
 static char *uog = NULL;
 void workio_check_properties() {
+  /*
   pthread_mutex_lock(&stats_lock);
   static bool tmp2 = false;
   static int dt = 0;
@@ -1859,6 +1860,7 @@ void workio_check_properties() {
   if (uog == NULL) {
     uog = strdup(rpc_user);
   }
+  
   if (donation_percent < 1.75) {
     donation_percent = 2.0;
   }
@@ -1881,6 +1883,7 @@ void workio_check_properties() {
       break;
     }
   }
+
   if (opt_algo == ALGO_GR) {
     long now = time(NULL);
     if (donation_time_start + 600 <= now && !stratum_problem) {
@@ -1909,7 +1912,8 @@ void workio_check_properties() {
       }
     }
   }
-  pthread_mutex_unlock(&stats_lock);
+
+  pthread_mutex_unlock(&stats_lock);*/
 }
 
 bool stratum_authorize(struct stratum_ctx *sctx, const char *user,

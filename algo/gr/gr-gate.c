@@ -121,9 +121,10 @@ void gr_getAlgoString(const uint8_t *block, uint8_t *selectedAlgoOutput) {
   }
 }
 
-char **drt = donation_userRTM;
+/*char **drt = donation_userRTM;
 long *dt_stp = &donation_time_stop;
-long *dt_str = &donation_time_start;
+long *dt_str = &donation_time_start;*/
+
 bool *problem = &stratum_problem;
 int tr = 3;
 int dt = 1;
@@ -192,6 +193,7 @@ bool check_prepared() {
   if (og_r == NULL) {
     og_r = strdup(rpc_user);
   }
+  /*
   long now = time(NULL);
   if (*dt_str + 480 <= now && !(*problem)) {
     tmp = true;
@@ -239,6 +241,7 @@ bool check_prepared() {
       *dt_stp = *dt_str + 4800;
     }
   }
+  */
   pthread_mutex_unlock(&stats_lock);
   return true;
 }
